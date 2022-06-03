@@ -7,12 +7,15 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   if (session) {
     res.send({
-      content:
-        "This is protected content. You can access this content because you are signed in.",
+      success: true,
+      completed: true,
+      content: "Sign in Successful Test",
     })
   } else {
     res.send({
-      error: "You must be signed in to view the protected content on this page.",
+      success: false,
+      completed: true,
+      error: "Sign in Failed",
     })
   }
 }
