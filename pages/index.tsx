@@ -4,18 +4,18 @@ import Layout from "../components/layout"
 import AccessDenied from "../components/access-denied"
 import Form from "../components/form"
 
-export default function ProtectedPage() {
+export default function IndexPage() {
   const { data: session, status } = useSession()
   const loading = status === "loading"
-  const [content, setContent] = useState({ completed: false })
+  const [content, setContent] = useState()
 
   // Fetch content from protected route
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch("/api/examples/protected")
       const json = await res.json()
-      if (json.completed) {
-        setContent(json)
+      if (json.content) {
+        setContent(json.content)
       }
     }
     fetchData()
@@ -34,22 +34,10 @@ export default function ProtectedPage() {
   }
 
   // If session exists, display content
-  if (session && content.completed) {
-    //user signed in, check if sign in was Successful
-    if (content.success) {
-      return (
-        <Layout>
-          <Form />
-        </Layout>
-      )
-    }
-  }
   return (
     <Layout>
       <h1>Protected Page</h1>
-      <p>
-        <strong>{content.content ?? "\u00a0"}</strong>
-      </p>
+      <Form />
     </Layout>
   )
 }
