@@ -41,7 +41,9 @@ export default function Form() {
     // We pass the event to the handleSubmit() function on submit.
     <form onSubmit={handleSubmit}>
       <label htmlFor="phoneNumbers">
-        Phone Numbers (one per line without special characters)
+        Phone Numbers
+        <br />
+        (One per line)
       </label>
       <br />
       <textarea name="phoneNumbers" id="phoneNumbers" />

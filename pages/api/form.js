@@ -40,7 +40,14 @@ export default function handler(req, res) {
 
   let status = ""
 
+  //Add Automatic message footer:
+  body.message =
+    body.message +
+    "\n\nThis is an automated message. For replies, please call/text: " +
+    body.phone
+
   phoneNumbers.map((number) => {
+    if (number.length < 1) return
     client.messages
       .create({
         body: body.message,
