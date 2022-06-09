@@ -11,7 +11,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   ]
 
   if (session) {
-    if (authorizedUsers.includes(session.user.email)) {
+    if (authorizedUsers.includes(session?.user.email)) {
       res.send({
         success: true,
         completed: true,
