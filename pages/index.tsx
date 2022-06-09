@@ -8,6 +8,7 @@ export default function IndexPage() {
   const { data: session, status } = useSession()
   const loading = status === "loading"
   const [content, setContent] = useState()
+  const [success, setSuccess] = useState(false)
 
   // Fetch content from protected route
   useEffect(() => {
@@ -15,11 +16,15 @@ export default function IndexPage() {
       const res = await fetch("/api/examples/protected")
       const json = await res.json()
       if (json.content) {
-        setContent(json.content)
+        setContent(json.success)
       }
     }
     fetchData()
   }, [session])
+
+  useEffect(() => {
+    setSuccess(content)
+  }, [content])
 
   // When rendering client side don't display anything until loading is complete
   if (typeof window !== "undefined" && loading) return null
@@ -34,9 +39,10 @@ export default function IndexPage() {
   }
 
   // If session exists, display content
+  console.log(success)
   return (
     <Layout>
-      <h1>Protected Page</h1>
+      <h1>Khuddam Message Service</h1>
       <Form />
     </Layout>
   )

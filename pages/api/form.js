@@ -54,7 +54,7 @@ export default function handler(req, res) {
         to: number, // Text this number
         from: process.env.TWILIO_PHONE_NUMBER, // From a valid Twilio number
       })
-      .then((message) => console.log(number))
+      .then((message) => console.log(message))
   })
 
   // Found the name.
@@ -62,6 +62,6 @@ export default function handler(req, res) {
   res.status(200).json({
     success: true,
     status: status,
-    data: `Message Sent`,
+    data: `Messages Sent`,
   })
 }

@@ -18,7 +18,7 @@ export default NextAuth({
        }),
     // Temporarily removing the Apple provider from the demo site as the
     // callback URL for it needs updating due to Vercel changing domains
-      
+
     Providers.Apple({
       clientId: process.env.APPLE_ID,
       clientSecret: {
@@ -28,7 +28,7 @@ export default NextAuth({
         keyId: process.env.APPLE_KEY_ID,
       },
     }),
-    */
+
     FacebookProvider({
       clientId: process.env.FACEBOOK_ID,
       clientSecret: process.env.FACEBOOK_SECRET,
@@ -37,10 +37,12 @@ export default NextAuth({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
     }),
+    */
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
     }),
+    /*
     TwitterProvider({
       clientId: process.env.TWITTER_ID,
       clientSecret: process.env.TWITTER_SECRET,
@@ -50,6 +52,7 @@ export default NextAuth({
       clientSecret: process.env.AUTH0_SECRET,
       issuer: process.env.AUTH0_ISSUER,
     }),
+    */
   ],
   theme: {
     colorScheme: "light",
