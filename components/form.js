@@ -36,6 +36,10 @@ export default function Form() {
     // If server returns the name submitted, that means the form works.
     const result = await response.json()
     alert(`${result.data}`)
+
+    document.getElementById("phoneNumbers").value = ""
+    document.getElementById("message").value = ""
+    document.getElementById("phone").value = ""
   }
   return (
     // We pass the event to the handleSubmit() function on submit.
