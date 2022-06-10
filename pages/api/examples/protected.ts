@@ -7,7 +7,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   let authorizedUsers: string[] = [
     "tofik.khan@mkausa.org",
-    "t.khan@students.clark.edu",
+    "northwest.region@mkausa.org",
   ]
 
   if (session) {
