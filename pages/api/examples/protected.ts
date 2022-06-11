@@ -8,6 +8,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   let authorizedUsers: string[] = [
     "tofik.khan@mkausa.org",
     "northwest.region@mkausa.org",
+    "northwest.taleem@mkausa.org",
   ]
 
   if (session) {
