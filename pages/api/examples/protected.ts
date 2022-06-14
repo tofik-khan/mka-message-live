@@ -5,11 +5,7 @@ import type { NextApiRequest, NextApiResponse } from "next"
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const session = await getSession({ req })
 
-  let authorizedUsers: string[] = [
-    "tofik.khan@mkausa.org",
-    "northwest.region@mkausa.org",
-    "northwest.taleem@mkausa.org",
-  ]
+  let authorizedUsers: string[] = process.env.AUTH_USERS.split(",")
 
   if (session) {
     if (authorizedUsers.includes(session!.user.email)) {
