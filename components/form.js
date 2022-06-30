@@ -8,7 +8,6 @@ export default function Form() {
     const data = {
       phoneNumbers: document.getElementById("phoneNumbers").value,
       message: document.getElementById("message").value,
-      phone: document.getElementById("phone").value,
     }
 
     // Send the data to the server in JSON format.
@@ -39,7 +38,6 @@ export default function Form() {
 
     document.getElementById("phoneNumbers").value = ""
     document.getElementById("message").value = ""
-    document.getElementById("phone").value = ""
   }
   return (
     // We pass the event to the handleSubmit() function on submit.
@@ -56,9 +54,6 @@ export default function Form() {
       <br />
       <textarea name="message" id="message" />
       <br />
-      <label htmlFor="phone">Your Phone Number</label>
-      <br />
-      <input name="phone" id="phone" />
       <br />
       <button type="submit">Submit</button>
     </form>
