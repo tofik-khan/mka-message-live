@@ -4,7 +4,7 @@ export default function handler(req, res) {
 
   // Guard clause checks for first and last name,
   // and returns early if they are not found
-  if (!body.phoneNumbers || !body.message || !body.phone) {
+  if (!body.phoneNumbers || !body.message) {
     // Sends a HTTP bad request error code
     return res.status(400).json({ success: false, message: "Missing Inputs" })
   }
