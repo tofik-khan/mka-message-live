@@ -49,7 +49,7 @@ export default function handler(req, res) {
       .create({
         body: body.message,
         to: number, // Text this number
-        from: process.env.TWILIO_PHONE_NUMBER, // From a valid Twilio number
+        messagingServiceSid: "MG84a191c6a1a4e664f4f76ff133609145",
       })
       .then((message) => console.log(message))
   })
