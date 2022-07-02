@@ -28,9 +28,9 @@ export default function handler(req, res) {
 
     return filtered
   })
-  console.log(phoneNumbers)
-  console.log("__________________")
-  console.log(process.env.TWILIO_ACCOUNT_SID)
+
+  //remove duplicates
+  phoneNumbers = [...new Set(phoneNumbers)]
 
   const accountSid = process.env.TWILIO_ACCOUNT_SID // Your Account SID from www.twilio.com/console
   const authToken = process.env.TWILIO_AUTH_TOKEN // Your Auth Token from www.twilio.com/console
